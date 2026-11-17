@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>research · lujain khalil</title>
-<meta name="description" content="lujain khalil's research: a thesis on separation fuzziness in deep networks, four papers on vision transformers, quantization, on-edge ml and spatial ml, and a talk on kaprekar's algorithm.">
+<meta name="description" content="lujain khalil's research: a thesis on separation fuzziness in deep networks, four papers on vision transformers, quantization, on-edge ML and spatial ML, and a talk on kaprekar's algorithm.">
 <meta name="theme-color" content="#07090f">
 <link rel="canonical" href="https://lujain-khalil.github.io/research/">
 <meta property="og:type" content="website"><meta property="og:title" content="research · lujain khalil">
@@ -34,7 +34,7 @@
   <p class="kicker">research</p>
   <h1>how networks<br>learn to tell<br>things apart.</h1>
   <p class="lede">i study training dynamics and class separability. i also quantize models down to a few bits.</p>
-  <p class="ctx"><span><b>m.sc.</b> machine learning, aus</span><span><b>4</b> papers</span><span><b>1</b> maths talk</span><a href="https://scholar.google.com/citations?user=BgLz9McAAAAJ&amp;hl=en" target="_blank" rel="noopener">google scholar ↗</a></p>
+  <p class="ctx"><span><b>m.sc.</b> machine learning, AUS</span><span><b>4</b> papers</span><span><b>1</b> maths talk</span><a href="https://scholar.google.com/citations?user=BgLz9McAAAAJ&amp;hl=en" target="_blank" rel="noopener">google scholar ↗</a></p>
 </header>
 
 <!-- ===== thesis ===== -->
@@ -80,7 +80,7 @@
       <h3>a near-perfect law</h3>
       <div class="pills"><span class="pill">fit R² <b>1.00</b></span><span class="pill">train <b>98.57%</b></span><span class="pill">test <b>89.35%</b></span></div>
       <svg id="fit" viewBox="0 0 320 130" role="img" aria-label="final-layer fuzziness decays exponentially over 150 epochs."></svg>
-      <p>in a 7-layer vit trained on fashion-mnist, final-layer fuzziness follows an exponential decay with a fit R² of 1.00. <span class="note">schematic of the thesis figure</span></p>
+      <p>in a 7-layer ViT trained on fashion-mnist, final-layer fuzziness follows an exponential decay with a fit R² of 1.00. <span class="note">schematic of the thesis figure</span></p>
     </div>
     <div class="vizcard">
       <h3>where it breaks</h3>
@@ -96,14 +96,14 @@
 
   <article class="paper">
     <div class="pt">
-      <p class="meta"><span class="venue">ieee access</span><span>2025</span><span>1 / 4</span></p>
+      <p class="meta"><span class="venue">IEEE access</span><span>2025</span><span>1 / 4</span></p>
       <h3><a href="https://doi.org/10.1109/ACCESS.2025.3602733" target="_blank" rel="noopener">class separation dynamics in vision transformers: an empirical study</a></h3>
       <p class="authors">d. varam, <b>l. khalil</b>, m. darwish, m. i. alhajri</p>
-      <p class="one">we trained vits on four datasets and swept depth, width, head count, patch size and optimizer. two laws held in nearly every run. fuzziness spikes and then decays through depth, and it decays exponentially over epochs.</p>
-      <div class="pills"><span class="pill"><b>4</b> datasets</span><span class="pill"><b>5</b> depths · <b>5</b> widths · <b>5</b> head counts</span><span class="pill"><b>10</b>-fold cv</span></div>
+      <p class="one">we trained ViTs on four datasets and swept depth, width, head count, patch size and optimizer. two laws held in nearly every run. fuzziness spikes and then decays through depth, and it decays exponentially over epochs.</p>
+      <div class="pills"><span class="pill"><b>4</b> datasets</span><span class="pill"><b>5</b> depths · <b>5</b> widths · <b>5</b> head counts</span><span class="pill"><b>10</b>-fold CV</span></div>
     </div>
     <div class="pv">
-      <canvas id="vitlayers" width="520" height="260" role="img" aria-label="animated schematic: fuzziness across vit layers drops as training progresses."></canvas>
+      <canvas id="vitlayers" width="520" height="260" role="img" aria-label="animated schematic: fuzziness across ViT layers drops as training progresses."></canvas>
       <p class="note">schematic: each line is fuzziness across layers at a later epoch</p>
     </div>
   </article>
@@ -132,22 +132,22 @@
       <p class="meta"><span class="venue">applied sciences</span><span>2024</span><span>3 / 4</span><span>equal first author</span></p>
       <h3><a href="https://doi.org/10.3390/app14188115" target="_blank" rel="noopener">on-edge deployment of vision transformers for medical diagnostics</a></h3>
       <p class="authors">d. varam, <b>l. khalil</b>, t. shanableh</p>
-      <p class="one">we quantized seven lightweight vits with tensorflow lite to classify capsule-endoscopy images on the device. the demo compares the size and cpu speed of two of them.</p>
-      <div class="pills"><span class="pill">best f1 <b>0.9534</b></span><span class="pill">smallest (qat) <b>1.70 MB</b></span><span class="pill"><b>~8×</b> faster on cpu</span></div>
+      <p class="one">we quantized seven lightweight ViTs with tensorflow lite to classify capsule-endoscopy images on the device. the demo compares the size and CPU speed of two of them.</p>
+      <div class="pills"><span class="pill">best F1 <b>0.9534</b></span><span class="pill">smallest (QAT) <b>1.70 MB</b></span><span class="pill"><b>~8×</b> faster on CPU</span></div>
     </div>
     <div class="pv">
       <canvas id="edge" width="520" height="250" role="img" aria-label="mobilevit v2 175 at 27.47 megabytes and 677 milliseconds against mobilevit v2 050 at 2.89 megabytes and 81 milliseconds."></canvas>
-      <p class="note">mobilevit_v2_175 vs mobilevit_v2_050 (f16), from the paper's cpu test</p>
+      <p class="note">mobilevit_v2_175 vs mobilevit_v2_050 (F16), from the paper's CPU test</p>
     </div>
   </article>
 
   <article class="paper">
     <div class="pt">
       <p class="meta"><span class="venue">applied sciences</span><span>2024</span><span>4 / 4</span></p>
-      <h3><a href="https://doi.org/10.3390/app14135853" target="_blank" rel="noopener">gis-based spatial machine learning for leak detection in water distribution networks</a></h3>
+      <h3><a href="https://doi.org/10.3390/app14135853" target="_blank" rel="noopener">GIS-based spatial machine learning for leak detection in water distribution networks</a></h3>
       <p class="authors">d. elshazly, r. gawai, t. ali, m. m. mortula, s. atabay, <b>l. khalil</b></p>
-      <p class="one">we used a year of data from existing pressure, flow and water-quality sensors. spatial ml models then locate the leaks.</p>
-      <div class="pills"><span class="pill">gwr R² <b>0.909</b></span><span class="pill">lof agreement <b>80%</b></span><span class="pill"><b>13</b> zones</span></div>
+      <p class="one">we used a year of data from existing pressure, flow and water-quality sensors. spatial ML models then locate the leaks.</p>
+      <div class="pills"><span class="pill">GWR R² <b>0.909</b></span><span class="pill">LOF agreement <b>80%</b></span><span class="pill"><b>13</b> zones</span></div>
     </div>
     <div class="pv">
       <canvas id="leak" width="520" height="260" role="img" aria-label="animated network of 13 sensor zones where one zone flags a leak."></canvas>
@@ -158,7 +158,7 @@
 
 <!-- ===== talk ===== -->
 <section class="section" id="talk" aria-labelledby="k-h">
-  <div class="head"><p class="kicker">talk · aus-icms 2025</p><h2 id="k-h">every 4-digit number ends at 6174.*</h2>
+  <div class="head"><p class="kicker">talk · AUS-icms 2025</p><h2 id="k-h">every 4-digit number ends at 6174.*</h2>
     <p class="sub">kaprekar's routine: sort the digits high to low, subtract low to high, repeat. my maths thesis covered the proofs for 3-digit and 4-digit numbers. it also built a framework for other digit lengths and for bases up to 10. try it below.</p><p class="note">* any 4-digit number with at least two different digits</p></div>
   <div class="lab kap">
     <div style="display:grid;gap:12px;align-content:start">
@@ -173,8 +173,8 @@
 <section class="section" aria-labelledby="e-h">
   <div class="head"><p class="kicker">education · american university of sharjah</p><h2 id="e-h">maths first, then machines.</h2></div>
   <div class="edu">
-    <div class="card"><p class="note">2024 to 2025</p><h3>m.sc. machine learning</h3><p>i graduated with a 3.71 gpa. my thesis was on the evolution of separation fuzziness.</p></div>
-    <div class="card"><p class="note">2019 to 2023</p><h3>b.sc. mathematics + computer science</h3><p>i took a second major in cs and a minor in data science. my theses were on kaprekar's algorithm and on sentiment-based course evaluation.</p></div>
+    <div class="card"><p class="note">2024 to 2025</p><h3>m.sc. machine learning</h3><p>i graduated with a 3.71 GPA. my thesis was on the evolution of separation fuzziness.</p></div>
+    <div class="card"><p class="note">2019 to 2023</p><h3>b.sc. mathematics + computer science</h3><p>i took a second major in CS and a minor in data science. my theses were on kaprekar's algorithm and on sentiment-based course evaluation.</p></div>
   </div>
 </section>
 </main>

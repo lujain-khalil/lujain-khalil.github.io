@@ -176,7 +176,7 @@
     const models = [["MobileViT_V2_175", 27.47, 0.9534, 677.2, C1], ["MobileViT_V2_050", 2.89, 0.9033, 80.8, C0]];
     const draw = t => {
       g.clearRect(0, 0, W, H); g.font = FONT;
-      g.fillStyle = MUTED; g.fillText("model size (MB)", 0, 14); g.fillText("cpu inference: first to finish", 0, 130);
+      g.fillStyle = MUTED; g.fillText("model size (MB)", 0, 14); g.fillText("CPU inference: first to finish", 0, 130);
       models.forEach(([n, mb, f1, ms, col], i) => {
         g.font = FONT; const LX = g.measureText("V2_175 ").width + 6, BW = W - LX - g.measureText("27.47 MB · F1 0.9534").width - 14, y = 26 + i * 40, bw = BW * mb / 27.47 * Math.min(1, t * 1.5);
         g.fillStyle = LINE; g.fillRect(LX, y, BW, 18); g.fillStyle = col; g.fillRect(LX, y, bw, 18);

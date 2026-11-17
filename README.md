@@ -1,26 +1,26 @@
 # lujain-khalil.github.io
 
-personal portfolio for lujain khalil, an ai engineer and ml researcher. it is a hand-built static site with no build step and no frameworks.
+personal portfolio for lujain khalil, an AI engineer and ML researcher. it is a hand-built static site with no build step and no frameworks.
 
 ## structure
 
 | path | what it is |
 |---|---|
 | `index.html` | home page: the particle hero, the live terminal agent, the three page links and the career path |
-| `engineering/` | ai engineering: the number visuals, the agent architecture explorer and a traced agent turn |
+| `engineering/` | AI engineering: the number visuals, the agent architecture explorer and a traced agent turn |
 | `research/` | the thesis fuzziness lab, one interactive visual per paper and the kaprekar demo |
 | `teaching/` | audiences, the course map and leadership |
-| `assets/js/config.js` | `LK_AGENT_URL`, the worker url for the live agent. it is not a secret |
+| `assets/js/config.js` | `LK_AGENT_URL`, the worker URL for the live agent. it is not a secret |
 | `assets/js/agent.js` | the terminal agent client. it handles streaming, shell commands and an offline fallback |
 | `assets/js/core.js` | shared nav, reveals, count-ups and helpers |
 | `assets/js/{home,engineering,research}.js` | page visuals |
-| `cv/Lujain-Khalil-CV.pdf` | public cv, with no phone number |
+| `cv/Lujain-Khalil-CV.pdf` | public CV, with no phone number |
 
-the agent backend is in a separate private repo: `~/Documents/GitHub/lujain-agent`. its readme covers the api key setup.
+the agent backend is in a separate private repo: `~/Documents/GitHub/lujain-agent`. its README covers the API key setup.
 
-## updating the emaar ai numbers
+## updating the emaar AI numbers
 
-the emaar ai figures appear in five places. change all of them together:
+the emaar AI figures appear in five places. change all of them together:
 
 1. `engineering/index.html`, "the numbers" section. each card has a `data-count` value for the big number and a canvas attribute (`data-n`, `data-cut`, `data-faster` or `data-growth`). the visual reads its value from that attribute.
 2. `engineering/index.html`, architecture panel. update the `.fig` lines under users, agent loop and evals.
@@ -40,7 +40,7 @@ then open http://localhost:8000.
 
 set your personal git identity for this repo before the first commit.
 
-1. on github.com, signed in as lujain-khalil, create an empty public repo named `lujain-khalil.github.io`. add no readme.
+1. on github.com, signed in as lujain-khalil, create an empty public repo named `lujain-khalil.github.io`. add no README.
 2. run:
 
 ```bash
@@ -61,8 +61,8 @@ if the push asks for credentials, sign in as lujain-khalil. you can also run `gh
 ## updating content
 
 - page text is in each page's `index.html`. the live agent's knowledge is in the private `lujain-agent` repo. the scripted offline answers are in `OFFLINE` in `assets/js/agent.js`.
-- rebuild the cv from its private latex source, then copy the phone-free pdf to `cv/Lujain-Khalil-CV.pdf`.
-- before pushing, check the html and the pdf for em dashes and for a phone number:
+- rebuild the CV from its private latex source, then copy the phone-free PDF to `cv/Lujain-Khalil-CV.pdf`.
+- before pushing, check the HTML and the PDF for em dashes and for a phone number:
 
 ```bash
 cd ~/Documents/GitHub/lujain-khalil.github.io && grep -rn $'\xe2\x80\x94' --exclude-dir=.git . ; pdftotext cv/Lujain-Khalil-CV.pdf - | head -3

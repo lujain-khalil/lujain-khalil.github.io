@@ -25,13 +25,13 @@
 
   // ---------- offline fallback (scripted, from the site's own content) ----------
   const OFFLINE = [
-    [/\b(build|builds|engineer\w*|agents?|rag|harness|emaar|work|ship\w*)\b/, "she leads the revamp of an enterprise agent platform used by about 1,300 people a week: a provider-neutral streaming agent loop, rag and text-to-sql analysts, long-term memory, mcp connectors, guardrails, sandboxed code execution and an llm-as-a-judge eval suite. full tour: /engineering"],
+    [/\b(build|builds|engineer\w*|agents?|rag|harness|emaar|work|ship\w*)\b/, "she leads the revamp of an enterprise agent platform used by about 1,300 people a week: a provider-neutral streaming agent loop, RAG and text-to-sql analysts, long-term memory, MCP connectors, guardrails, sandboxed code execution and an LLM-as-a-judge eval suite. full tour: /engineering"],
     [/\b(thesis|fuzz\w*|separab\w*|five)\b/, "imagine sorting coloured marbles that start all mixed up. as a network trains, marbles of the same colour huddle together and the colours drift apart. her thesis measures that with one number, separation fuzziness D = Tr(SSw SSb+), and works out when it has to shrink. play with it: /research"],
-    [/\b(papers?|research\w*|publications?|scholar)\b/, "four papers: class separation dynamics in vision transformers (ieee access), optimal-transport quantization for flow matching (arxiv), on-edge vits for medical images (applied sciences) and spatial ml for water leak detection (applied sciences). /research"],
+    [/\b(papers?|research\w*|publications?|scholar)\b/, "four papers: class separation dynamics in vision transformers (IEEE access), optimal-transport quantization for flow matching (arxiv), on-edge ViTs for medical images (applied sciences) and spatial ML for water leak detection (applied sciences). /research"],
     [/\b(fun|hobb\w*|outside|free time|guitar|horse\w*|gym|read\w*)\b/, "outside work she likes reading, the gym, horse riding and guitar. she also cannot leave a maths problem alone."],
-    [/\b(teach\w*|ta|kids|courses?|literacy)\b/, "she was a graduate ta for eight university courses and taught kids to code for two years, including a camp with the museum of the future. she also runs ai literacy sessions for colleagues. /teaching"],
-    [/\b(contact|email|reach|hire|linkedin|cv|resume)\b/, "email: lujain.osama.4@gmail.com · linkedin.com/in/lujain-khalil · github.com/lujain-khalil. type `cat cv` to grab the cv."],
-  [/\b(who|herself|introduce|hello|hi|hey)\b/, "lujain khalil is an ai engineer in sharjah, uae. she builds production llm agents (agent loops, rag, memory, mcp, guardrails, evals) and researches how neural networks learn to separate classes. she has an m.sc. in machine learning and four papers, and she teaches at university, at kids' camps and at work."],
+    [/\b(teach\w*|ta|kids|courses?|literacy)\b/, "she was a graduate TA for eight university courses and taught kids to code for two years, including a camp with the museum of the future. she also runs AI literacy sessions for colleagues. /teaching"],
+    [/\b(contact|email|reach|hire|linkedin|cv|resume)\b/, "email: lujain.osama.4@gmail.com · linkedin.com/in/lujain-khalil · github.com/lujain-khalil. type `cat cv` to grab the CV."],
+  [/\b(who|herself|introduce|hello|hi|hey)\b/, "lujain khalil is an AI engineer in sharjah, UAE. she builds production LLM agents (agent loops, RAG, memory, MCP, guardrails, evals) and researches how neural networks learn to separate classes. she has an m.sc. in machine learning and four papers, and she teaches at university, at kids' camps and at work."],
   ];
   const offline = q => (OFFLINE.find(([re]) => re.test(q.toLowerCase())) || [0, "i'm running in offline mode, so i only know the basics. try `help`, or ask about her work, research, teaching or hobbies."])[1];
 
@@ -70,7 +70,7 @@
   function boot(t) {
     t.log.innerHTML = "";
     const a = document.createElement("pre"); a.className = "ascii"; a.textContent = BANNER; a.setAttribute("aria-hidden", "true"); t.log.appendChild(a);
-    line(t, "t-dim", live ? "model: claude-haiku-5-5 · kb: cvs, papers, thesis, github" : "mode: offline (scripted) · live agent not connected");
+    line(t, "t-dim", live ? "model: claude-haiku-5-5 · KB: CVs, papers, thesis, github" : "mode: offline (scripted) · live agent not connected");
     line(t, "t-dim", "type a question, or `help` for commands");
     history.forEach(m => m.role === "user" ? line(t, "t-you", "› " + m.content) : line(t, "t-say", null, linkify(m.content)));
     line(t, "t-dim", " ");
@@ -81,7 +81,7 @@
     "help            this list",
     "ls              pages on this site",
     "cd <page>       engineering, research, teaching, ~",
-    "cat cv          download the cv",
+    "cat cv          download the CV",
     "whoami          who you are talking to",
     "clear           wipe the screen and memory",
     "anything else   ask the agent",
@@ -116,7 +116,7 @@
     setBusy(true);
     history.push({ role: "user", content: q });
     const t0 = performance.now();
-    all("t-tool", live ? "→ claude-haiku-5-5 · reading kb" : "→ offline script");
+    all("t-tool", live ? "→ claude-haiku-5-5 · reading KB" : "→ offline script");
     const outs = all("t-say caret", "");
     let text = "";
     const write = () => outs.forEach(o => { o.textContent = text; o.parentElement.scrollTop = o.parentElement.scrollHeight });
