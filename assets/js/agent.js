@@ -17,23 +17,23 @@
   const CHIPS = [
     "who is lujain?",
     "what does she build?",
-    "explain her thesis like I'm five",
+    "explain her thesis like i'm five",
     "what's the coolest paper?",
     "what does she do for fun?",
-    "how do I reach her?",
+    "how do i reach her?",
   ];
 
   // ---------- offline fallback (scripted, from the site's own content) ----------
   const OFFLINE = [
-    [/\b(build|builds|engineer\w*|agents?|rag|harness|emaar|work|ship\w*)\b/, "She leads the revamp of an enterprise agent platform used by about 1,300 people a week: a provider-neutral streaming agent loop, RAG and text-to-SQL analysts, long-term memory, MCP connectors, guardrails, sandboxed code execution and an LLM-as-a-judge eval harness. Full tour: /engineering"],
-    [/\b(thesis|fuzz\w*|separab\w*|five)\b/, "Imagine sorting coloured marbles that start all mixed up. As a network trains, marbles of the same colour huddle together and the colours drift apart. Her thesis measures that with one number, separation fuzziness D = Tr(SSw SSb+), and works out when it has to shrink. Play with it: /research"],
-    [/\b(papers?|research\w*|publications?|scholar)\b/, "Four papers: class separation dynamics in vision transformers (IEEE Access), optimal-transport quantization for flow matching (arXiv), on-edge ViTs for medical images (Applied Sciences) and spatial ML for water leak detection (Applied Sciences). /research"],
-    [/\b(fun|hobb\w*|outside|free time|guitar|horse\w*|gym|read\w*)\b/, "Off the clock: reading, the gym, horse riding and guitar. Also, she will absolutely get nerd-sniped by a maths problem."],
-    [/\b(teach\w*|ta|kids|courses?|literacy)\b/, "Eight university courses as a graduate TA, two years teaching kids to code (including a camp with the Museum of the Future), and AI literacy sessions for colleagues. /teaching"],
-    [/\b(contact|email|reach|hire|linkedin|cv|resume)\b/, "Email: lujain.osama.4@gmail.com · linkedin.com/in/lujain-khalil · github.com/lujain-khalil. Type `cat cv` to grab the CV."],
-  [/\b(who|herself|introduce|hello|hi|hey)\b/, "Lujain Khalil: AI engineer in Sharjah, UAE. She builds production LLM agents (harnesses, RAG, memory, MCP, guardrails, evals) and researches how neural networks learn to separate classes. M.Sc. in Machine Learning, four papers, and a habit of teaching everyone around her."],
+    [/\b(build|builds|engineer\w*|agents?|rag|harness|emaar|work|ship\w*)\b/, "she leads the revamp of an enterprise agent platform used by about 1,300 people a week: a provider-neutral streaming agent loop, rag and text-to-sql analysts, long-term memory, mcp connectors, guardrails, sandboxed code execution and an llm-as-a-judge eval suite. full tour: /engineering"],
+    [/\b(thesis|fuzz\w*|separab\w*|five)\b/, "imagine sorting coloured marbles that start all mixed up. as a network trains, marbles of the same colour huddle together and the colours drift apart. her thesis measures that with one number, separation fuzziness D = Tr(SSw SSb+), and works out when it has to shrink. play with it: /research"],
+    [/\b(papers?|research\w*|publications?|scholar)\b/, "four papers: class separation dynamics in vision transformers (ieee access), optimal-transport quantization for flow matching (arxiv), on-edge vits for medical images (applied sciences) and spatial ml for water leak detection (applied sciences). /research"],
+    [/\b(fun|hobb\w*|outside|free time|guitar|horse\w*|gym|read\w*)\b/, "outside work she likes reading, the gym, horse riding and guitar. she also cannot leave a maths problem alone."],
+    [/\b(teach\w*|ta|kids|courses?|literacy)\b/, "she was a graduate ta for eight university courses and taught kids to code for two years, including a camp with the museum of the future. she also runs ai literacy sessions for colleagues. /teaching"],
+    [/\b(contact|email|reach|hire|linkedin|cv|resume)\b/, "email: lujain.osama.4@gmail.com · linkedin.com/in/lujain-khalil · github.com/lujain-khalil. type `cat cv` to grab the cv."],
+  [/\b(who|herself|introduce|hello|hi|hey)\b/, "lujain khalil is an ai engineer in sharjah, uae. she builds production llm agents (agent loops, rag, memory, mcp, guardrails, evals) and researches how neural networks learn to separate classes. she has an m.sc. in machine learning and four papers, and she teaches at university, at kids' camps and at work."],
   ];
-  const offline = q => (OFFLINE.find(([re]) => re.test(q.toLowerCase())) || [0, "I'm running in offline mode, so I only know the basics. Try `help`, or ask about her work, research, teaching or hobbies."])[1];
+  const offline = q => (OFFLINE.find(([re]) => re.test(q.toLowerCase())) || [0, "i'm running in offline mode, so i only know the basics. try `help`, or ask about her work, research, teaching or hobbies."])[1];
 
   // ---------- rendering ----------
   const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -81,7 +81,7 @@
     "help            this list",
     "ls              pages on this site",
     "cd <page>       engineering, research, teaching, ~",
-    "cat cv          download the CV",
+    "cat cv          download the cv",
     "whoami          who you are talking to",
     "clear           wipe the screen and memory",
     "anything else   ask the agent",
@@ -142,7 +142,7 @@
         }
       } } finally { clearTimeout(timer); reader.cancel().catch(() => {}) }
       if (!finished) throw Object.assign(new Error("agent"), { msg: "the connection dropped mid-answer. try again?" });
-      if (!text.trim()) throw Object.assign(new Error("agent"), { msg: "I came back empty-handed. try asking another way?" });
+      if (!text.trim()) throw Object.assign(new Error("agent"), { msg: "i came back empty-handed. try asking another way?" });
     } catch (e) {
       if (e.message === "rate" || e.message === "agent") { text = (text ? text + "\n" : "") + "[" + (e.msg || "something glitched. try again in a moment.") + "]" }
       else if (live && text) { text += "\n[the connection dropped. try again?]" }
@@ -166,11 +166,11 @@
     el.classList.add("term");
     el.innerHTML = `
       <div class="term-bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span class="ttl">lujain-agent: ~/</span>
-        <span class="stat"><i class="led"></i><span class="st"></span></span>${closable ? '<button class="x" type="button" aria-label="Close terminal">×</button>' : ""}</div>
-      <div class="term-log" role="log" aria-live="polite" aria-label="Agent conversation"></div>
+        <span class="stat"><i class="led"></i><span class="st"></span></span>${closable ? '<button class="x" type="button" aria-label="close terminal">×</button>' : ""}</div>
+      <div class="term-log" role="log" aria-live="polite" aria-label="agent conversation"></div>
       <div class="term-chips"></div>
       <form class="term-input" autocomplete="off"><span aria-hidden="true">❯</span>
-        <label class="sr-only">Ask lujain-agent</label><input type="text" maxlength="600" placeholder="ask me anything about lujain, or type help" aria-label="Ask lujain-agent">
+        <label class="sr-only">ask lujain-agent</label><input type="text" maxlength="600" placeholder="ask me anything about lujain, or type help" aria-label="ask lujain-agent">
         <button type="submit">run</button></form>`;
     const t = { el, log: el.querySelector(".term-log"), chips: el.querySelector(".term-chips"), form: el.querySelector("form") };
     t.setStatus = () => { el.querySelector(".led").classList.toggle("live", live); el.querySelector(".st").textContent = live ? "live · haiku" : "offline · scripted" };
@@ -187,7 +187,7 @@
   const drawer = document.createElement("div"); drawer.className = "drawer"; drawer.setAttribute("role", "dialog"); drawer.setAttribute("aria-label", "lujain-agent terminal");
   const inner = document.createElement("div"); drawer.appendChild(inner); document.body.appendChild(drawer);
   let dt = null, opener = null;
-  const launcher = document.createElement("button"); launcher.type = "button"; launcher.className = "launcher"; launcher.innerHTML = '❯<span class="lt"> ask lujain-agent</span>'; launcher.setAttribute("aria-label", "Ask lujain-agent");
+  const launcher = document.createElement("button"); launcher.type = "button"; launcher.className = "launcher"; launcher.innerHTML = '❯<span class="lt"> ask lujain-agent</span>'; launcher.setAttribute("aria-label", "ask lujain-agent");
   document.body.appendChild(launcher);
   function openDrawer() {
     const home = document.querySelector("[data-agent]");

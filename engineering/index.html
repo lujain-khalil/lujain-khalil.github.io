@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AI Engineering · Lujain Khalil</title>
-<meta name="description" content="How Lujain Khalil builds production LLM agents: streaming agent harness, RAG, long-term memory, MCP, guardrails, sandboxes and evals.">
+<title>ai engineering · lujain khalil</title>
+<meta name="description" content="how lujain khalil builds production llm agents: streaming agent loop, rag, long-term memory, mcp, guardrails, sandboxes and evals.">
 <meta name="theme-color" content="#07090f">
 <link rel="canonical" href="https://lujain-khalil.github.io/engineering/">
-<meta property="og:type" content="website"><meta property="og:title" content="AI Engineering · Lujain Khalil">
-<meta property="og:description" content="Agent harnesses, RAG, memory, MCP, guardrails and evals in production.">
+<meta property="og:type" content="website"><meta property="og:title" content="ai engineering · lujain khalil">
+<meta property="og:description" content="how i build agent loops, rag, memory, mcp, guardrails and evals for production.">
 <meta property="og:url" content="https://lujain-khalil.github.io/engineering/"><meta property="og:image" content="https://lujain-khalil.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
@@ -18,10 +18,10 @@
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body class="p-eng" data-root="../">
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">skip to content</a>
 <header class="nav solid">
   <a class="brand" href="../"><span class="dot" aria-hidden="true"></span><span>lujain<span class="muted">.khalil</span></span></a>
-  <nav aria-label="Pages"><ul>
+  <nav aria-label="pages"><ul>
     <li><a class="nl" href="./" aria-current="page">engineering</a></li>
     <li><a class="nl" href="../research/">research</a></li>
     <li><a class="nl" href="../teaching/">teaching</a></li>
@@ -31,31 +31,31 @@
 
 <main id="main">
 <header class="phead">
-  <p class="kicker">AI engineering</p>
-  <h1>I build agents<br>that do real work.</h1>
-  <p class="lede">Harness, retrieval, memory, tools, guardrails, evals. The whole stack, end to end, in production.</p>
-  <p class="ctx"><span>currently: AI Engineer at Emaar IT, leading the revamp of its agent platform, EMAAR AI</span></p>
+  <p class="kicker">ai engineering</p>
+  <h1>i build agents<br>1,300 people use<br>each week.</h1>
+  <p class="lede">i build every part of the stack: the agent loop, retrieval, memory, tools, guardrails and evals. all of it runs in production.</p>
+  <p class="ctx"><span>i am an ai engineer at emaar it. i lead the revamp of its agent platform, emaar ai.</span></p>
 </header>
 
 <section class="section" aria-labelledby="k-h">
-  <div class="head"><p class="kicker">The stack I own</p><h2 id="k-h">Eight things I build.</h2></div>
+  <div class="head"><p class="kicker">the stack i own</p><h2 id="k-h">eight things i build.</h2></div>
   <div class="caps">
-    <button class="cap" type="button" data-go="harness"><span class="gl" aria-hidden="true">⟳</span><b>Agent harness</b><span>streaming loop, tools, sub-agents</span></button>
-    <button class="cap" type="button" data-go="rag"><span class="gl" aria-hidden="true">⌕</span><b>RAG</b><span>agent-scoped retrieval, text-to-SQL</span></button>
-    <button class="cap" type="button" data-go="memory"><span class="gl" aria-hidden="true">◎</span><b>Memory</b><span>extract, reconcile, safety-check</span></button>
-    <button class="cap" type="button" data-go="mcp"><span class="gl" aria-hidden="true">⇄</span><b>MCP</b><span>M365, Atlassian, per-user OAuth</span></button>
-    <button class="cap" type="button" data-go="guardrails"><span class="gl" aria-hidden="true">⛨</span><b>Guardrails</b><span>injection screens, approvals, gateway</span></button>
-    <button class="cap" type="button" data-go="evals"><span class="gl" aria-hidden="true">✓</span><b>Evals</b><span>LLM-as-a-judge, CI gates</span></button>
-    <button class="cap" type="button" data-go="sandbox"><span class="gl" aria-hidden="true">▣</span><b>Sandboxes</b><span>isolated pods, documents, artifacts</span></button>
-    <button class="cap" type="button" data-go="models"><span class="gl" aria-hidden="true">⤳</span><b>Routing</b><span>4 providers, fallback chains</span></button>
+    <button class="cap" type="button" data-go="harness"><span class="gl" aria-hidden="true">⟳</span><b>agent loop</b><span>streaming loop, tools, sub-agents</span></button>
+    <button class="cap" type="button" data-go="rag"><span class="gl" aria-hidden="true">⌕</span><b>rag</b><span>agent-scoped retrieval, text-to-sql</span></button>
+    <button class="cap" type="button" data-go="memory"><span class="gl" aria-hidden="true">◎</span><b>memory</b><span>extract, reconcile, safety-check</span></button>
+    <button class="cap" type="button" data-go="mcp"><span class="gl" aria-hidden="true">⇄</span><b>mcp</b><span>m365, atlassian, per-user oauth</span></button>
+    <button class="cap" type="button" data-go="guardrails"><span class="gl" aria-hidden="true">⛨</span><b>guardrails</b><span>injection screens, approvals, gateway</span></button>
+    <button class="cap" type="button" data-go="evals"><span class="gl" aria-hidden="true">✓</span><b>evals</b><span>llm-as-a-judge, ci gates</span></button>
+    <button class="cap" type="button" data-go="sandbox"><span class="gl" aria-hidden="true">▣</span><b>sandboxes</b><span>isolated pods, documents, artifacts</span></button>
+    <button class="cap" type="button" data-go="models"><span class="gl" aria-hidden="true">⤳</span><b>routing</b><span>4 providers, fallback chains</span></button>
   </div>
 </section>
 
 <section class="section" aria-labelledby="n-h">
-  <div class="head"><p class="kicker">Impact</p><h2 id="n-h">The numbers.</h2></div>
+  <div class="head"><p class="kicker">impact</p><h2 id="n-h">the numbers.</h2></div>
   <p class="note">the little animations are illustrative</p>
   <div class="nums">
-    <div class="num"><b class="big" data-count="1300" data-prefix="~">~1,300</b><span class="lbl">weekly active users. One dot each.</span><canvas data-viz="users" data-n="1300" aria-hidden="true"></canvas></div>
+    <div class="num"><b class="big" data-count="1300" data-prefix="~">~1,300</b><span class="lbl">weekly active users, one dot each</span><canvas data-viz="users" data-n="1300" aria-hidden="true"></canvas></div>
     <div class="num"><b class="big c0" data-count="88" data-suffix="%">88%</b><span class="lbl">prompt-cache hit rate across providers</span><canvas data-viz="ring" data-pct="0.88" aria-hidden="true"></canvas></div>
     <div class="num"><b class="big c3" data-count="75" data-suffix="%">75%</b><span class="lbl">lower effective input token cost</span><canvas data-viz="shrink" data-cut="0.75" aria-hidden="true"></canvas></div>
     <div class="num"><b class="big c0" data-count="40" data-suffix="%">40%</b><span class="lbl">faster time to first token</span><canvas data-viz="race" data-faster="0.40" aria-hidden="true"></canvas></div>
@@ -65,43 +65,43 @@
 </section>
 
 <section class="section" aria-labelledby="a-h">
-  <div class="head"><p class="kicker">Anatomy of an agent</p><h2 id="a-h">What I built, piece by piece.</h2><p class="sub">Click a component to light up its path.</p></div>
+  <div class="head"><p class="kicker">anatomy of an agent</p><h2 id="a-h">what i built, piece by piece.</h2><p class="sub">click a component to highlight its path.</p></div>
   <div class="arch">
-    <div class="arch-diagram" role="group" aria-label="Agent platform architecture. Select a component.">
+    <div class="arch-diagram" role="group" aria-label="agent platform architecture. select a component.">
       <div class="lane-label" aria-hidden="true">request path</div>
-      <button class="node n-user" type="button" data-node="users" aria-controls="node-users"><span class="nk">01</span>Users &amp; channels</button>
-      <button class="node n-guard" type="button" data-node="guardrails" aria-controls="node-guardrails"><span class="nk">02</span>Guardrails &amp; governance gateway</button>
-      <button class="node n-harness" type="button" data-node="harness" aria-controls="node-harness"><span class="nk">03</span>Agent harness<small>streaming loop · orchestration · sub-agents</small></button>
+      <button class="node n-user" type="button" data-node="users" aria-controls="node-users"><span class="nk">01</span>users &amp; channels</button>
+      <button class="node n-guard" type="button" data-node="guardrails" aria-controls="node-guardrails"><span class="nk">02</span>guardrails &amp; governance gateway</button>
+      <button class="node n-harness" type="button" data-node="harness" aria-controls="node-harness"><span class="nk">03</span>agent loop<small>streaming loop · orchestration · sub-agents</small></button>
       <div class="tools">
-        <button class="node" type="button" data-node="mcp" aria-controls="node-mcp"><span class="nk">04</span>MCP connectors</button>
-        <button class="node" type="button" data-node="rag" aria-controls="node-rag"><span class="nk">05</span>RAG &amp; SQL analysts</button>
-        <button class="node" type="button" data-node="memory" aria-controls="node-memory"><span class="nk">06</span>Long-term memory</button>
-        <button class="node" type="button" data-node="sandbox" aria-controls="node-sandbox"><span class="nk">07</span>Code sandbox</button>
+        <button class="node" type="button" data-node="mcp" aria-controls="node-mcp"><span class="nk">04</span>mcp connectors</button>
+        <button class="node" type="button" data-node="rag" aria-controls="node-rag"><span class="nk">05</span>rag &amp; sql analysts</button>
+        <button class="node" type="button" data-node="memory" aria-controls="node-memory"><span class="nk">06</span>long-term memory</button>
+        <button class="node" type="button" data-node="sandbox" aria-controls="node-sandbox"><span class="nk">07</span>code sandbox</button>
       </div>
-      <button class="node n-models" type="button" data-node="models" aria-controls="node-models"><span class="nk">08</span>Model routing<small>Anthropic · Azure OpenAI · Fal · self-hosted Qwen</small></button>
+      <button class="node n-models" type="button" data-node="models" aria-controls="node-models"><span class="nk">08</span>model routing<small>anthropic · azure openai · fal · self-hosted qwen</small></button>
       <div class="side">
-        <button class="node" type="button" data-node="control" aria-controls="node-control"><span class="nk">09</span>Control plane</button>
-        <button class="node" type="button" data-node="evals" aria-controls="node-evals"><span class="nk">10</span>Evals &amp; observability</button>
+        <button class="node" type="button" data-node="control" aria-controls="node-control"><span class="nk">09</span>control plane</button>
+        <button class="node" type="button" data-node="evals" aria-controls="node-evals"><span class="nk">10</span>evals &amp; observability</button>
       </div>
     </div>
     <div class="arch-panel" aria-live="polite">
-      <article class="node-detail" id="node-users"><h3>Users &amp; channels</h3><p>Staff chat with agents, build their own custom agents, and run departmental workflows that were turned into agents.</p><p class="fig">~1,300 weekly active users</p></article>
-      <article class="node-detail" id="node-guardrails"><h3>Guardrails</h3><p>Prompt-injection screening, human approval for write actions and a memory safety gate. A governance gateway applies egress allowlists, usage limits and audit logs to every tool, retrieval and web call.</p><p class="fig">access by department, grade and directory group</p></article>
-      <article class="node-detail" id="node-harness"><h3>Agent harness</h3><p>A provider-neutral streaming agent loop: tool calling, orchestration and sub-agent delegation. Every tool round streams. History trimming, tool-result compaction and cross-provider prompt caching keep context lean.</p><p class="fig">88% cache hits · 75% lower input cost · 40% faster first token</p></article>
-      <article class="node-detail" id="node-mcp"><h3>MCP connectors</h3><p>Model Context Protocol connectors for Microsoft 365, Atlassian and more, with per-user OAuth, an encrypted credential vault and approval before any write.</p></article>
-      <article class="node-detail" id="node-rag"><h3>RAG &amp; SQL analysts</h3><p>Retrieval over agent-scoped knowledge bases. Analyst agents run text-to-SQL through a read-only, row-capped query layer, so they answer business questions without ever changing data.</p></article>
-      <article class="node-detail" id="node-memory"><h3>Long-term memory</h3><p>Extracts, reconciles and safety-checks per-user memories, so agents carry useful context across conversations.</p></article>
-      <article class="node-detail" id="node-sandbox"><h3>Code sandbox</h3><p>Warm pools of network-isolated Kubernetes pods where agents run code to produce Office documents, PDFs and interactive web artifacts.</p></article>
-      <article class="node-detail" id="node-models"><h3>Model routing</h3><p>Routing and fallback chains live in the database, so a model can be swapped or failed over without a redeploy. High-volume work runs on on-prem models.</p></article>
-      <article class="node-detail" id="node-control"><h3>Control plane</h3><p>Hot-reloads models, agents, prompts and access rules without redeployment.</p></article>
-      <article class="node-detail" id="node-evals"><h3>Evals &amp; observability</h3><p>An LLM-as-a-judge harness across models with versioned prompts and tool schemas, plus automated tests, CI gates and Grafana dashboards on time to first token, tool errors and spend.</p><p class="fig">35% fewer failed turns</p></article>
+      <article class="node-detail" id="node-users"><h3>users &amp; channels</h3><p>staff chat with agents, build their own custom agents, and run departmental workflows that were turned into agents.</p><p class="fig">~1,300 weekly active users</p></article>
+      <article class="node-detail" id="node-guardrails"><h3>guardrails</h3><p>prompt-injection screening, human approval for write actions and a memory safety gate. a governance gateway applies egress allowlists, usage limits and audit logs to every tool, retrieval and web call.</p><p class="fig">access by department, grade and directory group</p></article>
+      <article class="node-detail" id="node-harness"><h3>agent loop</h3><p>the agent loop is provider-neutral and streams every tool round. it handles tool calling, orchestration and sub-agent delegation. history trimming, tool-result compaction and cross-provider prompt caching keep the context short.</p><p class="fig">88% cache hits · 75% lower input cost · 40% faster first token</p></article>
+      <article class="node-detail" id="node-mcp"><h3>mcp connectors</h3><p>model context protocol connectors link agents to microsoft 365, atlassian and other services. each user signs in with their own oauth account. credentials sit in an encrypted vault, and every write needs approval.</p></article>
+      <article class="node-detail" id="node-rag"><h3>rag &amp; sql analysts</h3><p>each agent retrieves from its own knowledge base. analyst agents run text-to-sql through a read-only, row-capped query layer, so they answer business questions and cannot change data.</p></article>
+      <article class="node-detail" id="node-memory"><h3>long-term memory</h3><p>the memory service extracts, reconciles and safety-checks memories for each user. agents keep that context across conversations.</p></article>
+      <article class="node-detail" id="node-sandbox"><h3>code sandbox</h3><p>agents run code in warm pools of network-isolated kubernetes pods. the code produces office documents, pdfs and interactive web artifacts.</p></article>
+      <article class="node-detail" id="node-models"><h3>model routing</h3><p>the database stores routing and fallback chains, so i can swap or fail over a model without a redeploy. high-volume work runs on on-prem models.</p></article>
+      <article class="node-detail" id="node-control"><h3>control plane</h3><p>the control plane hot-reloads models, agents, prompts and access rules without a redeploy.</p></article>
+      <article class="node-detail" id="node-evals"><h3>evals &amp; observability</h3><p>an llm-as-a-judge eval suite tests each model against versioned prompts and tool schemas. the platform also has automated tests, ci gates and grafana dashboards for time to first token, tool errors and spend.</p><p class="fig">35% fewer failed turns</p></article>
     </div>
   </div>
 </section>
 
 <section class="section" aria-labelledby="t-h">
-  <div class="head"><p class="kicker">One turn, traced</p><h2 id="t-h">What happens when you hit enter.</h2><p class="sub">A simplified, illustrative trace of a single agent turn.</p></div>
-  <div class="trace" id="trace" role="img" aria-label="Illustrative trace of one agent turn: guardrail check, memory recall, retrieval, a SQL tool call, an approval gate and a streamed answer.">
+  <div class="head"><p class="kicker">one turn, traced</p><h2 id="t-h">what happens when you hit enter.</h2><p class="sub">this is a simplified, illustrative trace of one agent turn.</p></div>
+  <div class="trace" id="trace" role="img" aria-label="illustrative trace of one agent turn: guardrail check, memory recall, retrieval, a sql tool call, an approval gate and a streamed answer.">
     <div class="row"><span class="t">0 ms</span><span class="k c2">request</span><span class="v">"summarise last month's top support issues"</span></div>
     <div class="row"><span class="t">+12</span><span class="k c3">guard</span><span class="v">injection screen ✓ · access policy ✓</span></div>
     <div class="row"><span class="t">+30</span><span class="k c1">memory</span><span class="v">recalled 2 user preferences</span></div>
@@ -117,29 +117,29 @@
 </section>
 
 <section class="section" aria-labelledby="o-h">
-  <div class="head"><p class="kicker">Also built</p><h2 id="o-h">More engineering.</h2></div>
+  <div class="head"><p class="kicker">also built</p><h2 id="o-h">more engineering.</h2></div>
   <div class="grid">
-    <div class="card"><p class="tags"><span>governance</span><span>cost</span></p><h3>AI ops &amp; gateways</h3><p>Usage and cost control across enterprise plans and cloud and on-prem models. A cost dashboard with daily reports and spend limits. AI gateways for monitoring and compliance, built with security.</p></div>
-    <div class="card"><p class="tags"><span>PyTorch</span><span>edge</span></p><h3>Edge/cloud split inference</h3><p>A ResNet-18 with early exits that learns where to split work between device and cloud under a latency SLO. Custom SLO-aware loss, network simulator, distillation.</p></div>
-    <div class="card"><p class="tags"><span>Flutter</span><span>TFLite</span></p><h3>Gastro Lens</h3><p>An Android app for an on-device vision transformer that classifies capsule-endoscopy images, with corrections and reports.</p><a class="linkline" href="https://github.com/lujain-khalil/gastro_lens" target="_blank" rel="noopener">code ↗</a></div>
-    <div class="card"><p class="tags"><span>NLP</span><span>fairness</span></p><h3>Arabic LLM bias probe</h3><p>Measures cultural bias between Arabic and Western terms across 10 BERT-family models.</p><a class="linkline" href="https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval" target="_blank" rel="noopener">code ↗</a></div>
-    <div class="card"><p class="tags"><span>Snowflake</span><span>Azure ML</span></p><h3>Data &amp; ML internships</h3><p>Emirates Post: ML models on delivery and customer data. BookEnds: analysis tools in R and Python.</p></div>
-    <div class="card"><p class="tags"><span>this site</span></p><h3>This portfolio's agent</h3><p>Claude Haiku behind a Cloudflare Worker: streaming, rate-limited, origin-locked, key never in the browser.</p><button class="btn" type="button" data-open-agent>❯ try it</button></div>
+    <div class="card"><p class="tags"><span>governance</span><span>cost</span></p><h3>ai ops &amp; gateways</h3><p>i control usage and cost across enterprise plans and cloud and on-prem models. a cost dashboard sends daily reports and enforces spend limits. i built ai gateways for monitoring and compliance with the security team.</p></div>
+    <div class="card"><p class="tags"><span>pytorch</span><span>edge</span></p><h3>edge/cloud split inference</h3><p>a resnet-18 with early exits learns where to split work between device and cloud under a latency target. the project uses a custom loss built around that target, a network simulator and distillation.</p></div>
+    <div class="card"><p class="tags"><span>flutter</span><span>tflite</span></p><h3>gastro lens</h3><p>gastro lens is an android app. it runs a vision transformer on the device to classify capsule-endoscopy images, and it supports corrections and reports.</p><a class="linkline" href="https://github.com/lujain-khalil/gastro_lens" target="_blank" rel="noopener">code ↗</a></div>
+    <div class="card"><p class="tags"><span>nlp</span><span>fairness</span></p><h3>arabic llm bias probe</h3><p>this project measures cultural bias between arabic and western terms in 10 bert-family models.</p><a class="linkline" href="https://github.com/lujain-khalil/Arabic-LLMs-Bias-Eval" target="_blank" rel="noopener">code ↗</a></div>
+    <div class="card"><p class="tags"><span>snowflake</span><span>azure ml</span></p><h3>data &amp; ml internships</h3><p>at emirates post i built ml models on delivery and customer data. at bookends i built analysis tools in r and python.</p></div>
+    <div class="card"><p class="tags"><span>this site</span></p><h3>this portfolio's agent</h3><p>claude haiku runs behind a cloudflare worker. the worker streams answers, rate-limits requests and accepts only this site's origin. the api key never reaches the browser.</p><button class="btn" type="button" data-open-agent>❯ try it</button></div>
   </div>
 </section>
 
 <section class="section" aria-labelledby="s-h">
-  <div class="head"><p class="kicker">Toolkit</p><h2 id="s-h">What I reach for.</h2></div>
+  <div class="head"><p class="kicker">toolkit</p><h2 id="s-h">what i use.</h2></div>
   <div class="stackgrp">
-    <div><h3>models &amp; agents</h3><p class="tags"><span>Anthropic Claude</span><span>Azure OpenAI</span><span>Qwen</span><span>vLLM</span><span>MCP</span><span>RAG</span><span>LLM evals</span><span>Whisper</span></p></div>
-    <div><h3>build &amp; ship</h3><p class="tags"><span>Python</span><span>TypeScript</span><span>SQL</span><span>FastAPI</span><span>Next.js</span><span>React</span><span>PostgreSQL</span><span>Redis</span><span>Snowflake</span><span>Claude Code</span><span>Codex</span><span>Cursor</span></p></div>
-    <div><h3>run &amp; observe</h3><p class="tags"><span>Docker</span><span>Kubernetes</span><span>ArgoCD</span><span>GitHub Actions</span><span>Cloudflare</span><span>Grafana</span><span>Playwright</span><span>PyTorch</span><span>TensorFlow</span></p></div>
+    <div><h3>models &amp; agents</h3><p class="tags"><span>anthropic claude</span><span>azure openai</span><span>qwen</span><span>vllm</span><span>mcp</span><span>rag</span><span>llm evals</span><span>whisper</span></p></div>
+    <div><h3>build &amp; ship</h3><p class="tags"><span>python</span><span>typescript</span><span>sql</span><span>fastapi</span><span>next.js</span><span>react</span><span>postgresql</span><span>redis</span><span>snowflake</span><span>claude code</span><span>codex</span><span>cursor</span></p></div>
+    <div><h3>run &amp; observe</h3><p class="tags"><span>docker</span><span>kubernetes</span><span>argocd</span><span>github actions</span><span>cloudflare</span><span>grafana</span><span>playwright</span><span>pytorch</span><span>tensorflow</span></p></div>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <span>© 2026 Lujain Khalil · <a href="mailto:lujain.osama.4@gmail.com">lujain.osama.4@gmail.com</a></span>
+  <span>© 2026 lujain khalil · <a href="mailto:lujain.osama.4@gmail.com">lujain.osama.4@gmail.com</a></span>
   <ul><li><a href="https://www.linkedin.com/in/lujain-khalil" target="_blank" rel="noopener">linkedin ↗</a></li><li><a href="https://github.com/lujain-khalil" target="_blank" rel="noopener">github ↗</a></li><li><a href="../cv/Lujain-Khalil-CV.pdf" download>cv.pdf ↓</a></li></ul>
 </footer>
 <script src="../assets/js/config.js?v=5"></script>
