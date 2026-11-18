@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Research · Lujain Khalil</title>
-<meta name="description" content="Lujain Khalil's research: a thesis on separation fuzziness in deep networks, four papers on vision transformers, quantization, on-edge ML and spatial ML, and a talk on Kaprekar's algorithm.">
+<title>research · lujain khalil</title>
+<meta name="description" content="lujain khalil's research: a thesis on separation fuzziness in deep networks, four papers on vision transformers, quantization, on-edge ML and spatial ML, and a talk on kaprekar's algorithm.">
 <meta name="theme-color" content="#07090f">
 <link rel="canonical" href="https://lujain-khalil.github.io/research/">
-<meta property="og:type" content="website"><meta property="og:title" content="Research · Lujain Khalil">
-<meta property="og:description" content="How neural networks learn to separate classes, and how to make them small.">
+<meta property="og:type" content="website"><meta property="og:title" content="research · lujain khalil">
+<meta property="og:description" content="how neural networks learn to separate classes, and how to make them small.">
 <meta property="og:url" content="https://lujain-khalil.github.io/research/"><meta property="og:image" content="https://lujain-khalil.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=5">
+<link rel="stylesheet" href="../assets/css/site.css?v=6">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body class="p-research" data-root="../">
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">skip to content</a>
 <header class="nav solid">
   <a class="brand" href="../"><span class="dot" aria-hidden="true"></span><span>lujain<span class="muted">.khalil</span></span></a>
-  <nav aria-label="Pages"><ul>
+  <nav aria-label="pages"><ul>
     <li><a class="nl" href="../engineering/">engineering</a></li>
     <li><a class="nl" href="./" aria-current="page">research</a></li>
     <li><a class="nl" href="../teaching/">teaching</a></li>
@@ -31,95 +31,95 @@
 
 <main id="main">
 <header class="phead">
-  <p class="kicker">Research</p>
-  <h1>How networks<br>learn to tell<br>things apart.</h1>
-  <p class="lede">Training dynamics, class separability, and squeezing models down to a few bits.</p>
-  <p class="ctx"><span><b>M.Sc.</b> Machine Learning, AUS</span><span><b>4</b> papers</span><span><b>1</b> maths talk</span><a href="https://scholar.google.com/citations?user=BgLz9McAAAAJ&amp;hl=en" target="_blank" rel="noopener">google scholar ↗</a></p>
+  <p class="kicker">research</p>
+  <h1>how networks<br>learn to tell<br>things apart.</h1>
+  <p class="lede">i study training dynamics and class separability. i also quantize models down to a few bits.</p>
+  <p class="ctx"><span><b>m.sc.</b> machine learning, AUS</span><span><b>4</b> papers</span><span><b>1</b> maths talk</span><a href="https://scholar.google.com/citations?user=BgLz9McAAAAJ&amp;hl=en" target="_blank" rel="noopener">google scholar ↗</a></p>
 </header>
 
-<!-- ===== THESIS ===== -->
+<!-- ===== thesis ===== -->
 <section class="section" id="thesis" aria-labelledby="th-h">
   <div class="head">
-    <p class="kicker">M.Sc. thesis · supervised by Dr. M. AlHajri</p>
-    <h2 id="th-h">Theoretical bounds for the evolution of separation fuzziness.</h2>
-    <p class="sub">One number for how tangled the classes are. Watch it fall as a network trains, and work out when it has to.</p>
+    <p class="kicker">m.sc. thesis · supervised by dr. m. alhajri</p>
+    <h2 id="th-h">theoretical bounds for the evolution of separation fuzziness.</h2>
+    <p class="sub">separation fuzziness is one number that measures how mixed the classes are. it falls as a network trains. the thesis derives when it has to fall.</p>
   </div>
 
   <div class="card">
-    <p class="formula" aria-label="D equals the trace of S S w times the pseudo-inverse of S S b">D = Tr( <span class="w">SS<sub>w</sub></span> · <span class="b">SS<sub>b</sub><sup>†</sup></span> )</p>
+    <p class="formula" aria-label="D equals the trace of SS w times the pseudo-inverse of SS b">D = Tr( <span class="w">SS<sub>w</sub></span> · <span class="b">SS<sub>b</sub><sup>†</sup></span> )</p>
     <p class="legend-row"><span><i style="background:var(--c2)"></i>within-class scatter: how spread each class is</span><span><i style="background:var(--c0)"></i>between-class scatter: how far apart classes are</span><span>lower D = cleaner separation</span></p>
   </div>
 
   <div class="lab" id="lab">
     <div style="display:grid;gap:12px">
-      <canvas id="lab-scatter" width="520" height="360" role="img" aria-label="Three classes of points that separate as training time increases."></canvas>
+      <canvas id="lab-scatter" width="520" height="360" role="img" aria-label="three classes of points that separate as training time increases."></canvas>
       <div class="ctrl"><label for="lab-t">training time <output id="lab-t-out">0</output></label><input type="range" id="lab-t" min="0" max="100" value="0"></div>
     </div>
     <div style="display:grid;gap:12px;align-content:start">
       <p class="note">pick one of the five scenarios from the thesis</p>
-      <div class="seg" id="lab-seg" role="group" aria-label="Scenario">
+      <div class="seg" id="lab-seg" role="group" aria-label="scenario">
         <button type="button" data-s="1" aria-pressed="true">1 · means drift apart</button>
         <button type="button" data-s="2" aria-pressed="false">2 · drift at different rates</button>
         <button type="button" data-s="3" aria-pressed="false">3 · classes tighten</button>
         <button type="button" data-s="4" aria-pressed="false">4 · tighten at different rates</button>
         <button type="button" data-s="5" aria-pressed="false">5 · both at once</button>
       </div>
-      <canvas id="lab-curve" width="520" height="220" role="img" aria-label="Fuzziness D over training time for the selected scenario."></canvas>
+      <canvas id="lab-curve" width="520" height="220" role="img" aria-label="fuzziness D over training time for the selected scenario."></canvas>
       <div class="readout"><span>fuzziness D<b id="lab-d">0.00</b></span><span>decay order<b id="lab-o">t⁻²</b></span></div>
-      <p class="note">Live maths on synthetic Gaussian classes. Scenarios 1 to 4 decay like t⁻², scenario 5 like t⁻⁴, matching the thesis derivations.</p>
+      <p class="note">the page computes D live on synthetic gaussian classes. scenarios 1 to 4 decay like t⁻², and scenario 5 decays like t⁻⁴, as the thesis derives.</p>
     </div>
   </div>
 
   <div class="three">
     <div class="vizcard">
-      <h3>Spike, then decay</h3>
-      <svg id="spike" viewBox="0 0 320 170" role="img" aria-label="Schematic: fuzziness spikes after the patch embedding, then decays layer by layer."></svg>
-      <p>In vision transformers, fuzziness jumps right after the patch embedding, then falls roughly exponentially through the blocks. <span class="note">schematic of the paper's figure</span></p>
+      <h3>spike, then decay</h3>
+      <svg id="spike" viewBox="0 0 320 170" role="img" aria-label="schematic: fuzziness spikes after the patch embedding, then decays layer by layer."></svg>
+      <p>in vision transformers, fuzziness jumps right after the patch embedding, then falls roughly exponentially through the blocks. <span class="note">schematic of the paper's figure</span></p>
     </div>
     <div class="vizcard">
-      <h3>A near-perfect law</h3>
+      <h3>a near-perfect law</h3>
       <div class="pills"><span class="pill">fit R² <b>1.00</b></span><span class="pill">train <b>98.57%</b></span><span class="pill">test <b>89.35%</b></span></div>
-      <svg id="fit" viewBox="0 0 320 130" role="img" aria-label="Final-layer fuzziness decays exponentially over 150 epochs."></svg>
-      <p>A 7-layer ViT on Fashion-MNIST: final-layer fuzziness follows an exponential decay over training almost exactly. <span class="note">schematic of the thesis figure</span></p>
+      <svg id="fit" viewBox="0 0 320 130" role="img" aria-label="final-layer fuzziness decays exponentially over 150 epochs."></svg>
+      <p>in a 7-layer ViT trained on fashion-mnist, final-layer fuzziness follows an exponential decay with a fit R² of 1.00. <span class="note">schematic of the thesis figure</span></p>
     </div>
     <div class="vizcard">
-      <h3>Where it breaks</h3>
-      <svg id="dims" viewBox="0 0 320 180" role="img" aria-label="Exponential fit R squared by embedding dimension: 32 gives 0.99, 64 gives 1.00, 128 gives 0.97, 256 gives 0.53, 512 gives 0.19."></svg>
-      <p>Make the embeddings too wide (256, 512) and the law collapses. Bigger is not automatically more separable.</p>
+      <h3>where it breaks</h3>
+      <svg id="dims" viewBox="0 0 320 180" role="img" aria-label="exponential fit r squared by embedding dimension: 32 gives 0.99, 64 gives 1.00, 128 gives 0.97, 256 gives 0.53, 512 gives 0.19."></svg>
+      <p>at embedding widths of 256 and 512, the fit R² drops to 0.53 and 0.19. wider embeddings do not make the classes more separable.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== PAPERS ===== -->
+<!-- ===== papers ===== -->
 <section class="section" id="papers" aria-labelledby="p-h">
-  <div class="head"><p class="kicker">Publications</p><h2 id="p-h">Four papers, four toys.</h2><p class="sub">Each one comes with something to poke.</p></div>
+  <div class="head"><p class="kicker">publications</p><h2 id="p-h">four papers.</h2><p class="sub">each paper has an interactive demo.</p></div>
 
   <article class="paper">
     <div class="pt">
-      <p class="meta"><span class="venue">IEEE Access</span><span>2025</span><span>1 / 4</span></p>
-      <h3><a href="https://doi.org/10.1109/ACCESS.2025.3602733" target="_blank" rel="noopener">Class separation dynamics in vision transformers: an empirical study</a></h3>
-      <p class="authors">D. Varam, <b>L. Khalil</b>, M. Darwish, M. I. AlHajri</p>
-      <p class="one">Four datasets, a sweep of depths, widths, heads, patch sizes and optimizers. Two laws held across nearly all of it: spike-then-decay through depth, and exponential decay over epochs.</p>
+      <p class="meta"><span class="venue">IEEE access</span><span>2025</span><span>1 / 4</span></p>
+      <h3><a href="https://doi.org/10.1109/ACCESS.2025.3602733" target="_blank" rel="noopener">class separation dynamics in vision transformers: an empirical study</a></h3>
+      <p class="authors">d. varam, <b>l. khalil</b>, m. darwish, m. i. alhajri</p>
+      <p class="one">we trained ViTs on four datasets and swept depth, width, head count, patch size and optimizer. two laws held in nearly every run. fuzziness spikes and then decays through depth, and it decays exponentially over epochs.</p>
       <div class="pills"><span class="pill"><b>4</b> datasets</span><span class="pill"><b>5</b> depths · <b>5</b> widths · <b>5</b> head counts</span><span class="pill"><b>10</b>-fold CV</span></div>
     </div>
     <div class="pv">
-      <canvas id="vitlayers" width="520" height="260" role="img" aria-label="Animated schematic: fuzziness across ViT layers drops as training progresses."></canvas>
+      <canvas id="vitlayers" width="520" height="260" role="img" aria-label="animated schematic: fuzziness across ViT layers drops as training progresses."></canvas>
       <p class="note">schematic: each line is fuzziness across layers at a later epoch</p>
     </div>
   </article>
 
   <article class="paper">
     <div class="pt">
-      <p class="meta"><span class="venue">arXiv preprint</span><span>2025</span><span>2 / 4</span></p>
-      <h3><a href="https://doi.org/10.48550/arXiv.2511.11418" target="_blank" rel="noopener">Low-bit, high-fidelity: optimal transport quantization for flow matching</a></h3>
-      <p class="authors">D. Varam, D. A. Abuhani, I. Zualkernan, R. AlDamani, <b>L. Khalil</b></p>
-      <p class="one">Quantize a generative model's weights so each bin holds equal mass (minimising Wasserstein distance), and it keeps generating cleanly at 2 to 3 bits, where uniform and log schemes fall apart.</p>
-      <div class="pills"><span class="pill">holds at <b>2 to 3</b> bits</span><span class="pill"><b>5</b> datasets incl. ImageNet, CelebA</span></div>
+      <p class="meta"><span class="venue">arxiv preprint</span><span>2025</span><span>2 / 4</span></p>
+      <h3><a href="https://doi.org/10.48550/arXiv.2511.11418" target="_blank" rel="noopener">low-bit, high-fidelity: optimal transport quantization for flow matching</a></h3>
+      <p class="authors">d. varam, d. a. abuhani, i. zualkernan, r. aldamani, <b>l. khalil</b></p>
+      <p class="one">we quantize a generative model's weights so each bin holds equal mass, which minimises wasserstein distance. the model still generates clean samples at 2 to 3 bits. uniform and log quantization fail at those bit widths.</p>
+      <div class="pills"><span class="pill">holds at <b>2 to 3</b> bits</span><span class="pill"><b>5</b> datasets incl. imagenet, celeba</span></div>
     </div>
     <div class="pv">
-      <canvas id="quant" width="520" height="230" role="img" aria-label="Histogram of model weights with quantization bin edges for uniform or optimal-transport bins."></canvas>
+      <canvas id="quant" width="520" height="230" role="img" aria-label="histogram of model weights with quantization bin edges for uniform or optimal-transport bins."></canvas>
       <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
-        <div class="seg" id="q-mode" role="group" aria-label="Quantizer"><button type="button" data-m="uniform" aria-pressed="false">uniform</button><button type="button" data-m="ot" aria-pressed="true">optimal transport</button></div>
+        <div class="seg" id="q-mode" role="group" aria-label="quantizer"><button type="button" data-m="uniform" aria-pressed="false">uniform</button><button type="button" data-m="ot" aria-pressed="true">optimal transport</button></div>
         <div class="ctrl" style="min-width:160px"><label for="q-bits">bits <output id="q-bits-out">3</output></label><input type="range" id="q-bits" min="2" max="5" value="3"></div>
       </div>
       <p class="readout"><span>levels<b id="q-levels">8</b></span><span>mean weight error<b id="q-err">0.000</b></span></p>
@@ -129,63 +129,63 @@
 
   <article class="paper">
     <div class="pt">
-      <p class="meta"><span class="venue">Applied Sciences</span><span>2024</span><span>3 / 4</span><span>equal first author</span></p>
-      <h3><a href="https://doi.org/10.3390/app14188115" target="_blank" rel="noopener">On-edge deployment of vision transformers for medical diagnostics</a></h3>
-      <p class="authors">D. Varam, <b>L. Khalil</b>, T. Shanableh</p>
-      <p class="one">Seven lightweight ViTs, quantized with TensorFlow Lite, classifying capsule-endoscopy images on-device. The tradeoff, in two bars and a race.</p>
+      <p class="meta"><span class="venue">applied sciences</span><span>2024</span><span>3 / 4</span><span>equal first author</span></p>
+      <h3><a href="https://doi.org/10.3390/app14188115" target="_blank" rel="noopener">on-edge deployment of vision transformers for medical diagnostics</a></h3>
+      <p class="authors">d. varam, <b>l. khalil</b>, t. shanableh</p>
+      <p class="one">we quantized seven lightweight ViTs with tensorflow lite to classify capsule-endoscopy images on the device. the demo compares the size and CPU speed of two of them.</p>
       <div class="pills"><span class="pill">best F1 <b>0.9534</b></span><span class="pill">smallest (QAT) <b>1.70 MB</b></span><span class="pill"><b>~8×</b> faster on CPU</span></div>
     </div>
     <div class="pv">
-      <canvas id="edge" width="520" height="250" role="img" aria-label="MobileViT V2 175 at 27.47 megabytes and 677 milliseconds against MobileViT V2 050 at 2.89 megabytes and 81 milliseconds."></canvas>
-      <p class="note">MobileViT_V2_175 vs MobileViT_V2_050 (F16), from the paper's CPU test</p>
+      <canvas id="edge" width="520" height="250" role="img" aria-label="mobilevit v2 175 at 27.47 megabytes and 677 milliseconds against mobilevit v2 050 at 2.89 megabytes and 81 milliseconds."></canvas>
+      <p class="note">mobilevit_v2_175 vs mobilevit_v2_050 (F16), from the paper's CPU test</p>
     </div>
   </article>
 
   <article class="paper">
     <div class="pt">
-      <p class="meta"><span class="venue">Applied Sciences</span><span>2024</span><span>4 / 4</span></p>
+      <p class="meta"><span class="venue">applied sciences</span><span>2024</span><span>4 / 4</span></p>
       <h3><a href="https://doi.org/10.3390/app14135853" target="_blank" rel="noopener">GIS-based spatial machine learning for leak detection in water distribution networks</a></h3>
-      <p class="authors">D. Elshazly, R. Gawai, T. Ali, M. M. Mortula, S. Atabay, <b>L. Khalil</b></p>
-      <p class="one">Existing pressure, flow and water-quality sensors, a year of data, and spatial ML to find where the water is going.</p>
+      <p class="authors">d. elshazly, r. gawai, t. ali, m. m. mortula, s. atabay, <b>l. khalil</b></p>
+      <p class="one">we used a year of data from existing pressure, flow and water-quality sensors. spatial ML models then locate the leaks.</p>
       <div class="pills"><span class="pill">GWR R² <b>0.909</b></span><span class="pill">LOF agreement <b>80%</b></span><span class="pill"><b>13</b> zones</span></div>
     </div>
     <div class="pv">
-      <canvas id="leak" width="520" height="260" role="img" aria-label="Animated network of 13 sensor zones where one zone flags a leak."></canvas>
+      <canvas id="leak" width="520" height="260" role="img" aria-label="animated network of 13 sensor zones where one zone flags a leak."></canvas>
       <p class="note">illustrative network; one zone's readings drift and get flagged</p>
     </div>
   </article>
 </section>
 
-<!-- ===== TALK ===== -->
+<!-- ===== talk ===== -->
 <section class="section" id="talk" aria-labelledby="k-h">
-  <div class="head"><p class="kicker">Talk · AUS-ICMS 2025</p><h2 id="k-h">Every 4-digit number ends at 6174.*</h2>
-    <p class="sub">Kaprekar's routine: sort the digits high to low, subtract low to high, repeat. My maths thesis worked through the 3 and 4-digit proofs and built a framework for other digit lengths and bases up to 10. Try it.</p><p class="note">* any 4-digit number with at least two different digits</p></div>
+  <div class="head"><p class="kicker">talk · AUS-icms 2025</p><h2 id="k-h">every 4-digit number ends at 6174.*</h2>
+    <p class="sub">kaprekar's routine: sort the digits high to low, subtract low to high, repeat. my maths thesis covered the proofs for 3-digit and 4-digit numbers. it also built a framework for other digit lengths and for bases up to 10. try it below.</p><p class="note">* any 4-digit number with at least two different digits</p></div>
   <div class="lab kap">
     <div style="display:grid;gap:12px;align-content:start">
-      <form class="kap-in" id="kap-form"><label for="kap" class="sr-only">A 4-digit number</label><input id="kap" inputmode="numeric" maxlength="4" value="3524" pattern="[0-9]{4}"><button class="btn primary" type="submit">run</button><button class="btn" type="button" id="kap-rand">random</button></form>
+      <form class="kap-in" id="kap-form"><label for="kap" class="sr-only">a 4-digit number</label><input id="kap" inputmode="numeric" maxlength="4" value="3524" pattern="[0-9]{4}"><button class="btn primary" type="submit">run</button><button class="btn" type="button" id="kap-rand">random</button></form>
       <p class="note">needs at least two different digits</p>
     </div>
     <div class="kap-steps" id="kap-steps" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- ===== EDUCATION ===== -->
+<!-- ===== education ===== -->
 <section class="section" aria-labelledby="e-h">
-  <div class="head"><p class="kicker">Education · American University of Sharjah</p><h2 id="e-h">Maths first, then machines.</h2></div>
+  <div class="head"><p class="kicker">education · american university of sharjah</p><h2 id="e-h">maths first, then machines.</h2></div>
   <div class="edu">
-    <div class="card"><p class="note">2024 to 2025</p><h3>M.Sc. Machine Learning</h3><p>GPA 3.71. Thesis on the evolution of separation fuzziness.</p></div>
-    <div class="card"><p class="note">2019 to 2023</p><h3>B.Sc. Mathematics + Computer Science</h3><p>Second major in CS, minor in data science. Theses on Kaprekar's algorithm and on sentiment-based course evaluation.</p></div>
+    <div class="card"><p class="note">2024 to 2025</p><h3>m.sc. machine learning</h3><p>i graduated with a 3.71 GPA. my thesis was on the evolution of separation fuzziness.</p></div>
+    <div class="card"><p class="note">2019 to 2023</p><h3>b.sc. mathematics + computer science</h3><p>i took a second major in CS and a minor in data science. my theses were on kaprekar's algorithm and on sentiment-based course evaluation.</p></div>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <span>© 2026 Lujain Khalil · <a href="mailto:lujain.osama.4@gmail.com">lujain.osama.4@gmail.com</a></span>
+  <span>© 2026 lujain khalil · <a href="mailto:lujain.osama.4@gmail.com">lujain.osama.4@gmail.com</a></span>
   <ul><li><a href="https://scholar.google.com/citations?user=BgLz9McAAAAJ&amp;hl=en" target="_blank" rel="noopener">scholar ↗</a></li><li><a href="https://github.com/lujain-khalil" target="_blank" rel="noopener">github ↗</a></li><li><a href="../cv/Lujain-Khalil-CV.pdf" download>cv.pdf ↓</a></li></ul>
 </footer>
-<script src="../assets/js/config.js?v=5"></script>
-<script src="../assets/js/core.js?v=5" defer></script>
-<script src="../assets/js/research.js?v=5" defer></script>
-<script src="../assets/js/agent.js?v=5" defer></script>
+<script src="../assets/js/config.js?v=6"></script>
+<script src="../assets/js/core.js?v=6" defer></script>
+<script src="../assets/js/research.js?v=6" defer></script>
+<script src="../assets/js/agent.js?v=6" defer></script>
 </body>
 </html>
