@@ -11,7 +11,7 @@ personal portfolio for lujain khalil, an AI engineer and ML researcher. it is a 
 | `research/` | the thesis fuzziness lab, one interactive visual per paper and the kaprekar demo |
 | `teaching/` | audiences, the course map and leadership |
 | `assets/js/config.js` | `LK_AGENT_URL`, the worker URL for the live agent. it is not a secret |
-| `assets/js/agent.js` | the terminal agent client. it handles streaming, shell commands and an offline fallback |
+| `assets/js/agent.js` | layla, the terminal agent client. it handles streaming, shell and slash commands (/clear, /compact) and an offline fallback |
 | `assets/js/core.js` | shared nav, reveals, count-ups and helpers |
 | `assets/js/{home,engineering,research}.js` | page visuals |
 | `cv/Lujain-Khalil-CV.pdf` | public CV, with no phone number |

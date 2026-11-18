@@ -278,8 +278,18 @@ ul, ol { margin: 0; padding: 0 }
 .term-log p { white-space: pre-wrap; overflow-wrap: anywhere }
 .t-dim { color: var(--muted) } .t-you { color: var(--c1) } .t-tool { color: var(--c2) } .t-ok { color: var(--c0) } .t-say { color: var(--ink) } .t-err { color: var(--c3) }
 .t-say a { color: var(--c0) }
-.ascii { color: var(--c0); font-size: 12px; line-height: 1.25; white-space: pre; overflow: hidden; margin: 0 0 6px }
-@media (max-width: 400px) { .ascii { font-size: 10px } }
+/* layla, the pixel agent: bobs, blinks, and a spark twinkles above her */
+.layla-hi { display: flex; align-items: center; gap: 14px; margin: 2px 0 10px }
+.layla-hi p { margin: 0 }
+.layla-name { font: 700 18px var(--mono); color: var(--c0); letter-spacing: .02em }
+.layla-px { flex: none; image-rendering: pixelated; overflow: visible }
+.layla-px .bob { animation: layla-bob 1.2s steps(1) infinite }
+.layla-px .eyes { animation: layla-blink 4s steps(1) infinite; transform-box: fill-box; transform-origin: center }
+.layla-px .spark { animation: layla-spark 1.6s steps(1) infinite }
+@keyframes layla-bob { 50% { transform: translateY(-1px) } }
+@keyframes layla-blink { 0%, 92%, 100% { transform: none } 94% { transform: scaleY(.15) } }
+@keyframes layla-spark { 0% { opacity: 1; transform: none } 33% { opacity: .35; transform: translate(-1px, 1px) } 66% { opacity: 0 } }
+.term-chips.slash button { color: var(--c1); border-color: #36305e }
 .caret::after { content: ""; display: inline-block; width: 8px; height: 15px; background: var(--c0); vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite }
 @keyframes blink { 50% { opacity: 0 } }
 .term-chips { display: flex; flex-wrap: nowrap; gap: 7px; padding: 0 18px 12px; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent) }
