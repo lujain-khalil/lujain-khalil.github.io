@@ -233,7 +233,7 @@
         await new Promise(r => setTimeout(r, LK.reduce ? 0 : 330)); if (id !== runId) return; row.classList.add("on"); n = next;
       }
       const fin = document.createElement("div"); fin.className = "fix";
-      fin.textContent = step === 0 ? "already at 6174, Kaprekar's constant." : `reached 6174 in ${step} step${step > 1 ? "s" : ""}. it never needs more than 7.`;
+      fin.textContent = step === 0 ? "already at 6174, kaprekar's constant." : `reached 6174 in ${step} step${step > 1 ? "s" : ""}. it never needs more than 7.`;
       out.appendChild(fin); await new Promise(r => setTimeout(r, 60)); fin.classList.add("on");
     };
     kf.addEventListener("submit", e => { e.preventDefault(); run() });
